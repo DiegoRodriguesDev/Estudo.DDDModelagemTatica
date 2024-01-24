@@ -1,5 +1,5 @@
-import Address from "./address";
-import Customer from "./customer";
+import Address from "../address";
+import Customer from "../customer";
 
 describe("Custumer unit tests",() => {
 
@@ -46,6 +46,17 @@ describe("Custumer unit tests",() => {
         customer.deactivate();
         
         expect(customer.isActive()).toBe(false);
+    })
+
+    it("should add reward points", () => {
+        const customer = new Customer("1","Customer");
+        expect(customer.rewardPoints).toBe(0);
+
+        customer.addRewardPoints(5);
+        expect(customer.rewardPoints).toBe(5);
+        
+        customer.addRewardPoints(5);
+        expect(customer.rewardPoints).toBe(10);
     })
     
 });
