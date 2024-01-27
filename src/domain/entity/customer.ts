@@ -32,9 +32,13 @@ export default class Customer {
     }
 
     get rewardPoints(): number {
-        return this._rewardPoints
+        return this._rewardPoints;
     }
 
+    get address(): Address {
+        return this._address;
+    };
+    
     set Address(address: Address) {
         this._address = address;
     }
