@@ -39,13 +39,13 @@ export default class Customer {
         return this._address;
     };
     
-    set Address(address: Address) {
-        this._address = address;
-    }
-
     changeName(name: string) {
         this._name = name;
         this.validate();
+    }
+
+    changeAddress(address: Address) {
+        this._address = address;
     }
 
     isActive() {

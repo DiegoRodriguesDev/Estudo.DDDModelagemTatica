@@ -1,7 +1,7 @@
 import OrderItem from "./order_item";
 
 export default class Order {
-    
+
     private _id: string;
     private _customerId: string;
     private _items: OrderItem[];
@@ -14,7 +14,19 @@ export default class Order {
         this._total = this.total();
         this.validate();
     }
-    
+
+    get id(): string {
+        return this._id;
+    }
+
+    get items(): OrderItem[] {
+        return this._items;
+    }
+
+    get customerId(): string {
+        return this._customerId;
+    }
+
     total(): number {
         return this._items.reduce((acc, item) => acc + item.orderItemTotal(), 0);
     }
