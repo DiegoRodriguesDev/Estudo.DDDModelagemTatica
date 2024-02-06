@@ -27,10 +27,15 @@ export default class Order {
         return this._customerId;
     }
 
+    AddItem(item: OrderItem): void {
+        this._items.push(item);
+        this.validate();
+    }
+
     total(): number {
         return this._items.reduce((acc, item) => acc + item.orderItemTotal(), 0);
     }
-
+    
     validate(): Boolean {
         if (this._id.length === 0) {
             throw new Error("Id is required");
